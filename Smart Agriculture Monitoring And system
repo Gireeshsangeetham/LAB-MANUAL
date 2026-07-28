@@ -1,0 +1,61 @@
+import java.util.Scanner;
+
+public class SmartAgriculture {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("===== SMART AGRICULTURE SYSTEM =====");
+
+        System.out.print("Enter Soil Moisture (%): ");
+        int moisture = sc.nextInt();
+
+        System.out.print("Enter Temperature (°C): ");
+        double temperature = sc.nextDouble();
+
+        System.out.print("Enter Humidity (%): ");
+        int humidity = sc.nextInt();
+
+        System.out.println("\n------ AGRICULTURE REPORT ------");
+
+        // Soil Moisture Check
+        if (moisture < 30) {
+            System.out.println("Soil Status : Dry");
+            System.out.println("Recommendation : Turn ON Irrigation");
+        } else {
+            System.out.println("Soil Status : Good");
+            System.out.println("Recommendation : Irrigation Not Required");
+        }
+
+        // Temperature Check
+        if (temperature > 35) {
+            System.out.println("Temperature : High");
+        } else if (temperature >= 20) {
+            System.out.println("Temperature : Normal");
+        } else {
+            System.out.println("Temperature : Low");
+        }
+
+        // Humidity Check
+        if (humidity > 80) {
+            System.out.println("Humidity : High");
+        } else if (humidity >= 40) {
+            System.out.println("Humidity : Normal");
+        } else {
+            System.out.println("Humidity : Low");
+        }
+
+        // Crop Suggestion
+        System.out.println("\nCrop Suggestion:");
+        if (temperature >= 25 && moisture >= 40) {
+            System.out.println("Rice");
+        } else if (temperature >= 20 && moisture >= 30) {
+            System.out.println("Wheat");
+        } else {
+            System.out.println("Millets");
+        }
+
+        System.out.println("\nSystem Monitoring Completed.");
+        sc.close();
+    }
+}
